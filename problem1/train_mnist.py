@@ -22,6 +22,8 @@ test_loader = DataLoader(test_dataset, batch_size=64, shuffle=False)
 import torch
 import torch.nn as nn
 
+torch.manual_seed(42)  # reproducible weight init and batch shuffling
+
 start_time = time.time()
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -96,7 +98,7 @@ plt.xlabel('Epoch')
 plt.ylabel('Training loss')
 plt.title('Training Loss by Activation Function')
 plt.legend()
-plt.savefig('activation_comparison.png')
+plt.savefig(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'figures', 'p1b_activation_comparison.png'), dpi=150)
 plt.show()
 
 

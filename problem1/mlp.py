@@ -2,7 +2,16 @@ import torch
 import torch.nn as nn
 
 class MLP(nn.Module):
-    def __init__(self, input_size, hidden_sizes,output_size, activation = 'relu'):
+    """Fully-connected network with an arbitrary number of hidden layers.
+
+    input_size   -- number of input features (784 for flattened MNIST)
+    hidden_sizes -- list of hidden layer widths, e.g. [128, 64]
+    output_size  -- number of classes; the model returns raw logits, softmax is
+                    applied inside nn.CrossEntropyLoss during training
+    activation   -- 'relu', 'sigmoid' or 'tanh', used after every hidden layer
+    dropout      -- dropout probability applied after each hidden activation (0 = off)
+    """
+    def __init__(self, input_size, hidden_sizes,output_size, activation = 'relu', dropout = 0.0):
         super().__init__()
         sizes = [input_size] + hidden_sizes + [output_size] 
         self.layers = nn.ModuleList()
@@ -16,6 +25,10 @@ class MLP(nn.Module):
             self.activation = nn.Sigmoid()
         elif activation == 'tanh':
             self.activation = nn.Tanh()
+        else:
+            raise ValueError(f"Unknown activation: {activation}")
+
+        self.dropout = nn.Dropout(dropout)
 
 
     def forward(self, x):
@@ -24,6 +37,7 @@ class MLP(nn.Module):
             x = layer(x)
             if i < len(self.layers) - 1:
                 x = self.activation(x)
+                x = self.dropout(x)
                 
         return x
 

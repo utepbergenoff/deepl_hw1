@@ -1,0 +1,12 @@
+Using device: mps
+Trainable parameters: 11,181,642
+[ResNet18] epoch  1  train loss 0.3417  val loss 0.1830  val acc 0.9378  (126.2s)
+[ResNet18] epoch  2  train loss 0.0972  val loss 0.1954  val acc 0.9352  (141.0s)
+[ResNet18] epoch  3  train loss 0.0481  val loss 0.1949  val acc 0.9416  (139.7s)
+
+ResNet18 fine-tuned test accuracy: 93.02%  (training time 407s)
+
+| Model | Parameters | Epochs | Training time (s) | Test accuracy |
+|---|---|---|---|---|
+| Basic CNN (3A, from scratch) | 545,098 | 20 | 108 | 69.59% |
+| ResNet18 (ImageNet, fine-tuned) | 11,181,642 | 3 | 407 | 93.02% |

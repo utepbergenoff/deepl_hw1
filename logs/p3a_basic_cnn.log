@@ -1,0 +1,48 @@
+Using device: mps
+BasicCNN(
+  (conv1): Conv2d(3, 32, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (conv2): Conv2d(32, 64, kernel_size=(3, 3), stride=(1, 1), padding=(1, 1))
+  (pool): MaxPool2d(kernel_size=2, stride=2, padding=0, dilation=1, ceil_mode=False)
+  (relu): ReLU()
+  (fc1): Linear(in_features=4096, out_features=128, bias=True)
+  (fc2): Linear(in_features=128, out_features=10, bias=True)
+)
+Trainable parameters: 545,098
+[BasicCNN] epoch  1  train loss 1.3585  val loss 1.1056  val acc 0.6034  (6.6s)
+[BasicCNN] epoch  2  train loss 0.9737  val loss 0.9190  val acc 0.6784  (5.4s)
+[BasicCNN] epoch  3  train loss 0.8240  val loss 0.8587  val acc 0.6972  (5.2s)
+[BasicCNN] epoch  4  train loss 0.7088  val loss 0.8371  val acc 0.7086  (5.5s)
+[BasicCNN] epoch  5  train loss 0.6126  val loss 0.8839  val acc 0.6998  (5.4s)
+[BasicCNN] epoch  6  train loss 0.5259  val loss 0.8870  val acc 0.7158  (5.2s)
+[BasicCNN] epoch  7  train loss 0.4452  val loss 0.9316  val acc 0.7214  (5.4s)
+[BasicCNN] epoch  8  train loss 0.3691  val loss 0.9776  val acc 0.7146  (5.4s)
+[BasicCNN] epoch  9  train loss 0.3018  val loss 1.0309  val acc 0.7166  (5.3s)
+[BasicCNN] epoch 10  train loss 0.2447  val loss 1.1348  val acc 0.7104  (5.4s)
+[BasicCNN] epoch 11  train loss 0.1957  val loss 1.2167  val acc 0.7122  (5.4s)
+[BasicCNN] epoch 12  train loss 0.1621  val loss 1.4569  val acc 0.6944  (5.1s)
+[BasicCNN] epoch 13  train loss 0.1401  val loss 1.6442  val acc 0.6872  (5.2s)
+[BasicCNN] epoch 14  train loss 0.1193  val loss 1.7660  val acc 0.6974  (5.3s)
+[BasicCNN] epoch 15  train loss 0.0979  val loss 1.7699  val acc 0.6992  (5.3s)
+[BasicCNN] epoch 16  train loss 0.0984  val loss 1.8952  val acc 0.6958  (5.4s)
+[BasicCNN] epoch 17  train loss 0.0891  val loss 2.0682  val acc 0.6974  (5.6s)
+[BasicCNN] epoch 18  train loss 0.0808  val loss 2.0117  val acc 0.7042  (5.4s)
+[BasicCNN] epoch 19  train loss 0.0741  val loss 2.1073  val acc 0.6974  (5.6s)
+[BasicCNN] epoch 20  train loss 0.0762  val loss 2.1511  val acc 0.6970  (5.5s)
+
+Training time: 108.4s
+Final (epoch 20) train accuracy: 98.19%
+Final (epoch 20) test accuracy:  69.59%
+Best-validation checkpoint (epoch 7) test accuracy: 71.19%
+
+Per-class test accuracy:
+  airplane    73.2%
+  automobile  73.8%
+  bird        57.9%
+  cat         47.1%
+  deer        66.8%
+  dog         60.9%
+  frog        80.5%
+  horse       76.1%
+  ship        80.1%
+  truck       79.5%
+Most common confusion: cat predicted as dog (193 times)

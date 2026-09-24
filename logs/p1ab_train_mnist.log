@@ -1,0 +1,30 @@
+Using device: cpu
+Epoch 1/5, Loss: 0.2645
+Epoch 2/5, Loss: 0.1119
+Epoch 3/5, Loss: 0.0785
+Epoch 4/5, Loss: 0.0624
+Epoch 5/5, Loss: 0.0493
+Train acc: 0.9852
+Test accuracy: 0.9742
+Epoch 1/5, Loss: 0.5695
+Epoch 2/5, Loss: 0.1673
+Epoch 3/5, Loss: 0.1102
+Epoch 4/5, Loss: 0.0825
+Epoch 5/5, Loss: 0.0619
+Train acc: 0.9859
+Test accuracy: 0.9714
+Epoch 1/5, Loss: 0.2781
+Epoch 2/5, Loss: 0.1119
+Epoch 3/5, Loss: 0.0785
+Epoch 4/5, Loss: 0.0628
+Epoch 5/5, Loss: 0.0505
+Train acc: 0.9868
+Test accuracy: 0.9718
+Total training time for all 3 models: 41.83 seconds
+
+Final Test Accuracy by Activation:
+  relu: 0.9742
+  sigmoid: 0.9714
+  tanh: 0.9718
+/Users/yerlanutepbergenov/projects-for-uni/deepl_hw1/problem1/train_mnist.py:102: UserWarning: FigureCanvasAgg is non-interactive, and thus cannot be shown
+  plt.show()
